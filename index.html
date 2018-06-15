@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="William Kwok">
+    <meta name="description" content="A first order ordinary differential flow simulator, made specifically for Pharmacokinetics, but can work with regular pipes">
+    <meta name="keywords" content="First order ODE, flow rate, flow, simulator, simulation, pharmacokinetics, pharmacokinetics simulator">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Flow rate simulator</title>
+</head>
+
+<body>
+
+    <main>
+        <div id="sidebar-button">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="container text-white" id="sidebar">
+            <p>Flow rate simulator</p>
+            <hr>
+            <div id="close-sidebar">
+                <i class="fas fa-times"></i>
+            </div>
+            <button type="button" class="btn btn-primary" id="toggle-update">Start</button>
+            <button type="button" class="btn btn-primary" id="reset-button">Reset</button>
+            <hr>
+            <div id="input-data">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Volume units" aria-label="Volume units to use" id="vol-units">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Time units" aria-label="Time units to use" id="time-units">
+                </div>
+                <hr>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Container name" aria-label="Name of container" id="container-name">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Max output rate" aria-label="Maximum output rate" id="max-out-rate">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Starting liquid level" aria-label="Starting liquid level" id="start-liquid-lvl">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Max capacity" aria-label="Max capacity" id="max-capacity">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Initial concentration" aria-label="Initial concentration" id="init-concentration">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Lethal concentration" aria-label="Lethal concentration" id="lethal-concentration">
+                </div>
+
+                <p>Flow outputs: Click to remove
+                    <ul>
+                        <li>Left: Concentration from 0.0-1.0</li>
+                        <li>Right: Output to container</li>
+                    </ul>
+                </p>
+
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="0.0-1.0" aria-label="Flow percentage output from zero to one" id="flow-rate">
+                    <input type="text" class="form-control" placeholder="Output to" aria-label="Container to output to" id="output-container">
+                    <div class="input-group-append">
+                        <button id="add-node-btn" class="btn btn-primary" type="button">+</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" id="flow-outputs">
+                    </div>
+                </div>
+
+            </div>
+            <button type="button" class="btn btn-primary" id="add-container-btn">Add container</button>
+            <hr>
+            <p>Containers: click to remove
+                <br/>
+            </p>
+            <div class="card">
+                <div class="card-body" id="container-nodes">
+                </div>
+            </div>
+            <br />
+            <button type="button" class="btn btn-primary" id="clear-all">Clear everything</button>
+            <hr>
+            <button type="button" class="btn btn-primary" id="demo">Demo</button>
+        </div>
+
+        <div class="row">
+            <canvas id="canvas">
+                Please update your browser to view this page.
+            </canvas>
+        </div>
+    </main>
+
+    <!-- Javascript includes -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin=" anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+        crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js " integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4 "
+        crossorigin="anonymous "></script>
+    <script src="js/scripts.js "></script>
+</body>
+
+</html>

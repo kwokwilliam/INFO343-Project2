@@ -1,0 +1,51 @@
+{
+    "name": "p-2",
+    "version": "1.0.0",
+    "private": true,
+    "description": "",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "^20.0.2",
+        "css": "^2.2.1",
+        "eslint": "^4.8.0",
+        "htmllint": "^0.7.0",
+        "jquery": "^3.2.1",
+        "stylelint": "^8.0.0",
+        "stylelint-config-recommended": "^1.0.0"
+    },
+    "dependencies": {
+        "is-ci": "^1.1.0"
+    },
+    "stylelint": {
+        "extends": "stylelint-config-recommended"
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "ecmaVersion": 6
+        },
+        "env": {
+            "browser": true,
+            "node": true,
+            "shared-node-browser": true,
+            "jquery": true
+        },
+        "extends": "eslint:recommended",
+        "rules": {
+            "no-console": "off",
+            "semi": [
+                "off",
+                "always",
+                {
+                    "omitLastInOneLineBlock": true
+                }
+            ],
+            "camelcase": [
+                "error"
+            ]
+        }
+    }
+}
